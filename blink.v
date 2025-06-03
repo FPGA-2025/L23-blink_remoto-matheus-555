@@ -16,16 +16,18 @@ module Blink #(
             leds     <= 8'b0;
         end else begin
             if (counter >= HALF_SECOND - 1) begin
-                leds[0]     <= 1'b0;
-                leds[7]     <= 1'b0;
+                leds[0]     <= 1'b1;
+                leds[7]     <= 1'b1;
+
+                counter <= counter + 1;
 
                 if (counter >= ONE_SECOND - 1) begin
                     counter <= 32'h0;
                 end
             end else begin
                 counter <= counter + 1;
-                leds[0]     <= 1'b1;
-                leds[7]     <= 1'b1;
+                leds[0]     <= 1'b0;
+                leds[7]     <= 1'b0;
             end
         end
     end
