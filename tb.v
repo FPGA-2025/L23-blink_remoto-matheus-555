@@ -17,7 +17,7 @@ initial begin
 end
 
 Blink #(
-    .CLK_FREQ(1000)
+    .CLK_FREQ(10000)
 ) U1(
     .clk   (clk),
     .rst_n (rst_n),
